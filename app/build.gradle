@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.dogbreeds'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.dogbreeds"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField("String", "BASE_URL", "\"https://dog.ceo/api/\"")
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    kapt {
+        correctErrorTypes true
+    }
+}
+
+dependencies {
+
+    // Core
+    implementation "androidx.core:core-ktx:$androidx_core_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
+
+    // Compose
+    implementation "androidx.activity:activity-compose:$compose_activity_version"
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$compose_nav_hilt_version"
+    implementation "androidx.compose.material:material:$compose_material_version"
+    implementation "androidx.compose.foundation:foundation:$compose_foundation_version"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:$compose_nav_version"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_kotlin_version"
+    implementation "com.squareup.moshi:moshi-adapters:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Coil
+    implementation "io.coil-kt:coil-compose:$coil_version"
+}

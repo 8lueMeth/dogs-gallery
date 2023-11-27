@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DogBreeds</string>
+
+    <string name="breeds_screen_top_bar_title">Breeds</string>
+    <string name="breeds_images_screen_top_bar_title">Gallery</string>
+    <string name="fav_breeds_screen_top_bar_title">Favorites</string>
+
+    <string name="filter_action_content_description">Filter Favorites</string>
+    <string name="breed_image_content_description">Breed Image</string>
+    <string name="navigate_to_favorites_content_description">Navigate to favorites</string>
+    <string name="navigate_back_content_description">Navigate back</string>
+    <string name="dog_icon_content_description">Dog</string>
+
+    <string name="apply_filter_action">Apply</string>
+    <string name="clear_filter_action">Clear</string>
+    <string name="no_favorites_text">You have no favorite dogs</string>
+
+    <string name="connectivity_error">Network connection error</string>
+    <string name="unknown_error">Unknown error</string>
+</resources>
